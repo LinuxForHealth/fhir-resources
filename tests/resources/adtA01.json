@@ -1,0 +1,449 @@
+{
+    "primaryPatientResourceId": "100",
+    "primaryPatientResourceEntry": {
+        "fullUrl": "urn:id:100",
+        "resource": {
+            "resourceType": "Patient",
+            "id": "100",
+            "identifier": [
+                {
+                    "type": {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                                "code": "MR",
+                                "display": "Medical record number"
+                            }
+                        ],
+                        "text": "MR"
+                    },
+                    "value": "PID1234",
+                    "assigner": {
+                        "reference": "Organization/A"
+                    }
+                },
+                {
+                    "type": {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                                "code": "SS",
+                                "display": "Social Security number"
+                            }
+                        ],
+                        "text": "SS"
+                    },
+                    "value": "1234568965",
+                    "assigner": {
+                        "reference": "Organization/USA"
+                    }
+                }
+            ],
+            "name": [
+                {
+                    "family": "DOE",
+                    "given": [
+                        "JOHN"
+                    ]
+                }
+            ],
+            "gender": "female",
+            "birthDate": "1980-02-02"
+        }
+    },
+    "patientBatch": [
+        {
+            "resourceType": "Bundle",
+            "id": "c66b6ed3-8fe6-4b04-84a5-4adc7c871176",
+            "meta": {
+                "lastUpdated": "2021-05-11T13:01:06.726+01:00"
+            },
+            "type": "collection",
+            "entry": [
+                {
+                    "fullUrl": "urn:uuid:MessageHeader/ec895663-7a99-387b-9197-eacd77acce5e",
+                    "resource": {
+                        "resourceType": "MessageHeader",
+                        "id": "ec895663-7a99-387b-9197-eacd77acce5e",
+                        "eventCoding": {
+                            "system": "http://terminology.hl7.org/CodeSystem/v2-0003",
+                            "code": "A01",
+                            "display": "ADT/ACK - Admit/visit notification"
+                        },
+                        "destination": [
+                            {
+                                "name": "PACS",
+                                "endpoint": "050"
+                            }
+                        ],
+                        "source": {
+                            "name": "SE050",
+                            "endpoint": "4086::132:2A57:3C28"
+                        },
+                        "reason": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/message-reasons-encounter",
+                                    "code": "admit",
+                                    "display": "Admit"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "fullUrl": "urn:uuid:Patient/dbc91865-e52c-4c66-b0a5-4c56a057f61b",
+                    "resource": {
+                        "resourceType": "Patient",
+                        "id": "dbc91865-e52c-4c66-b0a5-4c56a057f61b",
+                        "identifier": [
+                            {
+                                "type": {
+                                    "coding": [
+                                        {
+                                            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                                            "code": "MR",
+                                            "display": "Medical record number"
+                                        }
+                                    ],
+                                    "text": "MR"
+                                },
+                                "value": "PID1234",
+                                "assigner": {
+                                    "reference": "Organization/A"
+                                }
+                            },
+                            {
+                                "type": {
+                                    "coding": [
+                                        {
+                                            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                                            "code": "SS",
+                                            "display": "Social Security number"
+                                        }
+                                    ],
+                                    "text": "SS"
+                                },
+                                "value": "1234568965",
+                                "assigner": {
+                                    "reference": "Organization/USA"
+                                }
+                            }
+                        ],
+                        "name": [
+                            {
+                                "family": "DOE",
+                                "given": [
+                                    "JOHN"
+                                ]
+                            }
+                        ],
+                        "gender": "female",
+                        "birthDate": "1980-02-02"
+                    }
+                },
+                {
+                    "fullUrl": "urn:uuid:Organization/A",
+                    "resource": {
+                        "resourceType": "Organization",
+                        "id": "A",
+                        "name": "Assigning Authority"
+                    }
+                },
+                {
+                    "fullUrl": "urn:uuid:Organization/USA",
+                    "resource": {
+                        "resourceType": "Organization",
+                        "id": "USA",
+                        "name": "Assigning Authority"
+                    }
+                },
+                {
+                    "fullUrl": "urn:uuid:Encounter/3a9155c1-cf2d-4ef7-9110-09beaa189856",
+                    "resource": {
+                        "resourceType": "Encounter",
+                        "id": "3a9155c1-cf2d-4ef7-9110-09beaa189856",
+                        "identifier": [
+                            {
+                                "value": "48390"
+                            }
+                        ],
+                        "status": "arrived",
+                        "class": {
+                            "code": "ff"
+                        },
+                        "type": [
+                            {
+                                "text": "EL"
+                            }
+                        ],
+                        "serviceType": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0069",
+                                    "code": "MED",
+                                    "display": "Medical Service"
+                                }
+                            ],
+                            "text": "MED"
+                        },
+                        "subject": {
+                            "reference": "Patient/dbc91865-e52c-4c66-b0a5-4c56a057f61b"
+                        },
+                        "period": {
+                            "start": "2014-09-12T22:00:00+08:00"
+                        },
+                        "length": {
+                            "unit": "Minutes"
+                        },
+                        "hospitalization": {
+                            "preAdmissionIdentifier": {
+                                "value": "ABC"
+                            },
+                            "specialCourtesy": [
+                                {
+                                    "text": "E"
+                                }
+                            ],
+                            "specialArrangement": [
+                                {
+                                    "coding": [
+                                        {
+                                            "system": "http://terminology.hl7.org/CodeSystem/v2-0009",
+                                            "code": "B6",
+                                            "display": "Pregnant"
+                                        }
+                                    ],
+                                    "text": "B6"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "fullUrl": "urn:uuid:Observation/9303ef00-5df7-461d-ac56-77e686bc33fb",
+                    "resource": {
+                        "resourceType": "Observation",
+                        "id": "9303ef00-5df7-461d-ac56-77e686bc33fb",
+                        "identifier": [
+                            {
+                                "value": "1234_"
+                            }
+                        ],
+                        "status": "final",
+                        "code": {
+                            "coding": [
+                                {
+                                    "code": "1234"
+                                }
+                            ]
+                        },
+                        "subject": {
+                            "reference": "Patient/dbc91865-e52c-4c66-b0a5-4c56a057f61b"
+                        },
+                        "encounter": {
+                            "reference": "Encounter/3a9155c1-cf2d-4ef7-9110-09beaa189856"
+                        },
+                        "issued": "2012-09-12T01:12:30+08:00",
+                        "performer": [
+                            {
+                                "reference": "Practitioner/5259f7c2-16d7-4907-afa2-97197ecf3011"
+                            },
+                            {
+                                "reference": "Practitioner/1441caa0-203a-40c2-916e-136df006ae1a"
+                            },
+                            {
+                                "reference": "Practitioner/5ccd87d5-0ade-4486-b2f0-92e1e19c74a0"
+                            },
+                            {
+                                "reference": "Practitioner/44bf90a7-357a-4ec6-b35c-864d381f1b26"
+                            }
+                        ],
+                        "valueString": "ECHOCARDIOGRAPHIC REPORT"
+                    }
+                },
+                {
+                    "fullUrl": "urn:uuid:Practitioner/5259f7c2-16d7-4907-afa2-97197ecf3011",
+                    "resource": {
+                        "resourceType": "Practitioner",
+                        "id": "5259f7c2-16d7-4907-afa2-97197ecf3011",
+                        "identifier": [
+                            {
+                                "value": "2740"
+                            }
+                        ],
+                        "name": [
+                            {
+                                "text": "Janetary TRDSE",
+                                "family": "TRDSE",
+                                "given": [
+                                    "Janetary"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "fullUrl": "urn:uuid:Practitioner/1441caa0-203a-40c2-916e-136df006ae1a",
+                    "resource": {
+                        "resourceType": "Practitioner",
+                        "id": "1441caa0-203a-40c2-916e-136df006ae1a",
+                        "identifier": [
+                            {
+                                "value": "2913"
+                            }
+                        ],
+                        "name": [
+                            {
+                                "text": "Darren MRTTE",
+                                "family": "MRTTE",
+                                "given": [
+                                    "Darren"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "fullUrl": "urn:uuid:Practitioner/5ccd87d5-0ade-4486-b2f0-92e1e19c74a0",
+                    "resource": {
+                        "resourceType": "Practitioner",
+                        "id": "5ccd87d5-0ade-4486-b2f0-92e1e19c74a0",
+                        "identifier": [
+                            {
+                                "value": "3065"
+                            }
+                        ],
+                        "name": [
+                            {
+                                "text": "Paul MGHOBT",
+                                "family": "MGHOBT",
+                                "given": [
+                                    "Paul"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "fullUrl": "urn:uuid:Practitioner/44bf90a7-357a-4ec6-b35c-864d381f1b26",
+                    "resource": {
+                        "resourceType": "Practitioner",
+                        "id": "44bf90a7-357a-4ec6-b35c-864d381f1b26",
+                        "identifier": [
+                            {
+                                "value": "4723"
+                            }
+                        ],
+                        "name": [
+                            {
+                                "text": "Robert LOTHDEW",
+                                "family": "LOTHDEW",
+                                "given": [
+                                    "Robert"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "fullUrl": "urn:uuid:AllergyIntolerance/23b291c7-81f0-4ea2-b8ad-34e1fb9c711c",
+                    "resource": {
+                        "resourceType": "AllergyIntolerance",
+                        "id": "23b291c7-81f0-4ea2-b8ad-34e1fb9c711c",
+                        "clinicalStatus": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+                                    "code": "active",
+                                    "display": "Active"
+                                }
+                            ]
+                        },
+                        "verificationStatus": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+                                    "code": "confirmed",
+                                    "display": "Confirmed"
+                                }
+                            ]
+                        },
+                        "criticality": "unable-to-assess",
+                        "code": {
+                            "coding": [
+                                {
+                                    "code": "00000741",
+                                    "display": "OXYCODONE"
+                                }
+                            ],
+                            "text": "OXYCODONE"
+                        },
+                        "patient": {
+                            "reference": "Patient/dbc91865-e52c-4c66-b0a5-4c56a057f61b"
+                        },
+                        "reaction": [
+                            {
+                                "manifestation": [
+                                    {
+                                        "text": "HYPOTENSION"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "fullUrl": "urn:uuid:AllergyIntolerance/fc3e57c1-1606-4320-979e-bf5946a1674d",
+                    "resource": {
+                        "resourceType": "AllergyIntolerance",
+                        "id": "fc3e57c1-1606-4320-979e-bf5946a1674d",
+                        "clinicalStatus": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+                                    "code": "active",
+                                    "display": "Active"
+                                }
+                            ]
+                        },
+                        "verificationStatus": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+                                    "code": "confirmed",
+                                    "display": "Confirmed"
+                                }
+                            ]
+                        },
+                        "criticality": "unable-to-assess",
+                        "code": {
+                            "coding": [
+                                {
+                                    "code": "00001433",
+                                    "display": "TRAMADOL"
+                                }
+                            ],
+                            "text": "TRAMADOL"
+                        },
+                        "patient": {
+                            "reference": "Patient/dbc91865-e52c-4c66-b0a5-4c56a057f61b"
+                        },
+                        "reaction": [
+                            {
+                                "manifestation": [
+                                    {
+                                        "text": "SEIZURES"
+                                    },
+                                    {
+                                        "text": "VOMITING"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

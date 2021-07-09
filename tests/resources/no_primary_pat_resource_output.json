@@ -1,0 +1,26 @@
+{
+    "entry": [
+        {
+            "fullUrl": "urn:id:example",
+            "request": {
+                "method": "PUT",
+                "url": "Encounter/example"
+            },
+            "resource": {
+                "id": "example",
+                "class": {
+                    "code": "IMP",
+                    "display": "inpatient encounter",
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+                },
+                "status": "in-progress",
+                "subject": {
+                    "reference": "Patient/a1"
+                },
+                "resourceType": "Encounter"
+            }
+        }
+    ],
+    "type": "transaction",
+    "resourceType": "Bundle"
+}

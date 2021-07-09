@@ -1,0 +1,20 @@
+version: 1
+project:
+  name: fhirResourcesService
+  version: 1
+  module: cdp_fhir_resource_mgmt.rest.endpoints_module
+  entrypoints:
+    - name: ep1
+      entrypoint: ping
+      path: ping
+      methods:
+        - GET
+    # TODO: Add POST (return 200) or PUT that accepts patient info and return bundle that
+    #   can be sent to FHIR. See EPIC 184 for details.
+    - name: ep2
+      entrypoint: patient_bundle
+      path: patient_bundle
+      methods:
+        - POST
+      headers:
+        - tenant_id

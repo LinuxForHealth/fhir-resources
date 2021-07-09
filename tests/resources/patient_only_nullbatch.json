@@ -1,0 +1,36 @@
+{
+  "primaryPatientResourceId": "pat12345",
+  "primaryPatientResourceEntry": {
+    "request": {
+      "method": "PUT",
+      "url": "Patient/pat12345"
+    },
+    "resource": {
+      "resourceType": "Patient",
+      "id": "pat12345",
+      "gender": "female",
+      "identifier": [
+        {
+          "use": "usual",
+          "system": "urn:oid:2.16.840.1.113883.2.4.6.3",
+          "value": "738472983"
+        },
+        {
+          "use": "usual",
+          "system": "urn:oid:2.16.840.1.113883.2.4.6.3"
+        }
+      ],
+      "active": true,
+      "name": [
+        {
+          "family": "LastName",
+          "given": [
+            "first",
+            "middle"
+          ]
+        }
+      ]
+    }
+  },
+  "patientBatch": null
+}

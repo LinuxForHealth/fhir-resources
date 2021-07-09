@@ -1,0 +1,24 @@
+version: "3.2"
+services:
+  fhir-resources-service:
+    #image: "wh-imaging-cdp-docker-local.artifactory.swg-devops.com/cdp/whpa-cdp-fhir-resources-service:0.0.1"
+    image: "whpa-cdp-fhir-resources-service:0.0.1"
+    ports:
+      - "5000:5000"
+    environment:
+      WHPA_CDP_FHIR_RESOURCES_SERVICE_CONFIG: "/var/ibm/whuser/config.ini"
+      WHPA_CDP_MINIO_SECRETS: "/var/ibm/wh/secrets/minio/"
+    volumes:
+      - "../config:/var/ibm/whuser"
+      - "../secrets/minio:/var/ibm/wh/secrets/minio/"
+
+  minio:
+    image: minio/minio:latest
+    ports:
+      - "9001:9000"
+    volumes:
+      - data1-1:/data
+    command: server /data
+
+volumes:
+  data1-1:
